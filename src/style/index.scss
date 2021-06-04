@@ -1,0 +1,68 @@
+.NavLink {
+    color:rgb(128, 138, 150);
+    padding: 10px;
+    text-decoration: none;
+}
+.NavLink:hover {
+    color:rgb(0, 0, 0);
+}
+.hrLine {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.nav-fill .nav-item .nav-link {
+    color:rgb(128, 138, 150);
+}
+.nav-fill .nav-item .nav-link:active {
+    color:black;
+}
+@media (max-width: 1200px) {
+    .productRecommend {
+        display: none;
+    }
+  }
+
+// Navbar第一個連結
+.mainLink {
+    color:black;
+    text-decoration: none;
+}
+.mainLink:hover {
+    color:rgb(128, 138, 150);
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    .smFade {
+      display: none;
+    }
+    .smFade Button {
+        display: none;
+    }
+    .smShow{
+        display: block;
+    }
+  }
+  @media (min-width: 768px) {
+    .smShow{
+        display: none;
+    }
+  }
+.jumbotronStyle {
+    background-image: url('https://images.unsplash.com/photo-1603468620905-8de7d86b781e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1055&q=80');
+    background-size: cover;
+    color:white
+}
+.offcanvas-body {
+    text-align: left;
+}
+.numberIcon {
+    position: relative;
+    top: -11px;
+    right: 19px;
+    color:white;
+    font-size: 5px;
+  }
+.shopCartIcon {
+    color:#212529;
+}
