@@ -1,13 +1,13 @@
 Tool used
 
-1.react
-2.react-router
-3.react hooks
-4.bootstrap
-5.react-bootstrap
-6.lodash
+1.react<br>
+2.react-router<br>
+3.react hooks<br>
+4.bootstrap<br>
+5.react-bootstrap<br>
+6.lodash<br>
 
 others
 
-1.fontawesome icon
-2.unsplash
+1.fontawesome icon<br>
+2.unsplash<br>
