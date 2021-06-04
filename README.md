@@ -6,6 +6,7 @@ Tool used
 4.bootstrap<br>
 5.react-bootstrap<br>
 6.lodash<br>
+7.scss
 
 others
 
