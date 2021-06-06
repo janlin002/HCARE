@@ -26,7 +26,7 @@ function Recommend() {
                   aria-selected="true"
                   onClick={()=>dispatch({type:CHANGE_PRODUCT, products: 'home'})}
                 >
-                  Home
+                  沙發/椅子/桌子
                 </button>
               </li>
               <li className="nav-item" role="presentation">
@@ -41,7 +41,7 @@ function Recommend() {
                   aria-selected="false"
                   onClick={()=>dispatch({type:CHANGE_PRODUCT, products: 'profile'})}
                 >
-                  Profile
+                  盆栽/植物
                 </button>
               </li>
               <li className="nav-item" role="presentation">
@@ -56,7 +56,7 @@ function Recommend() {
                   aria-selected="false"
                   onClick={()=>dispatch({type:CHANGE_PRODUCT, products: 'content'})}
                 >
-                  Contact
+                  廚房用品
                 </button>
               </li>
             </ul>

@@ -3,11 +3,14 @@ import { Card, Button, Modal } from 'react-bootstrap';
 
 import { changeProductType } from '../../../Redux/Reducer';
 import { home, profile, content } from '../../../data';
-
+import { addItemToCart } from '../../../Redux/Reducer';
+import { ADD_TO_CART } from '../../../Redux/Action/actionType';
 
 function ProductCarousel() {
   const { products } = useContext(changeProductType);
-
+  const { item, dispatch } = useContext(addItemToCart);
+  const addItem = item.cartItem;
+  console.log(item.cartItem, 'reducer');
   if (products === 'home') {
     return (
       <div className="container">
@@ -17,18 +20,21 @@ function ProductCarousel() {
               <Card style={{ width: '18rem', borderRadius: '20px' }}>
                 <Card.Img
                   variant="top"
-                  src="https://images.unsplash.com/photo-1586942593822-268ff3828458?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
-                  style={{borderTopRightRadius: '20px', borderTopLeftRadius: '20px'}}
+                  src={item.image}
+                  style={{
+                    borderTopRightRadius: '20px',
+                    borderTopLeftRadius: '20px',
+                  }}
                 />
-                <Card.Body style={{borderRadius: '20px'}}>
+                <Card.Body style={{ borderRadius: '20px' }}>
                   <Card.Title>{item.id}</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
+                  <Card.Text>{item.title}</Card.Text>
                   <Button
                     variant="btn btn-outline-dark btn-sm"
-                    onClick={() => console.log('加到購物車')}
+                    onClick={() => {
+                      addItem.push(item);
+                      dispatch({ type: ADD_TO_CART, item: addItem });
+                    }}
                   >
                     加到購物車
                   </Button>
@@ -48,18 +54,21 @@ function ProductCarousel() {
               <Card style={{ width: '18rem', borderRadius: '20px' }}>
                 <Card.Img
                   variant="top"
-                  src="https://images.unsplash.com/photo-1586942593822-268ff3828458?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
-                  style={{borderTopRightRadius: '20px', borderTopLeftRadius: '20px'}}
+                  src={item.image}
+                  style={{
+                    borderTopRightRadius: '20px',
+                    borderTopLeftRadius: '20px',
+                  }}
                 />
-                <Card.Body style={{borderRadius: '20px'}}>
+                <Card.Body style={{ borderRadius: '20px' }}>
                   <Card.Title>{item.id}</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
+                  <Card.Text>{item.title}</Card.Text>
                   <Button
                     variant="btn btn-outline-dark btn-sm"
-                    onClick={() => console.log('加到透悟車')}
+                    onClick={() => {
+                      addItem.push(item);
+                      dispatch({ type: ADD_TO_CART, item: addItem });
+                    }}
                   >
                     加到購物車
                   </Button>
@@ -79,18 +88,21 @@ function ProductCarousel() {
               <Card style={{ width: '18rem', borderRadius: '20px' }}>
                 <Card.Img
                   variant="top"
-                  src="https://images.unsplash.com/photo-1586942593822-268ff3828458?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
-                  style={{borderTopRightRadius: '20px', borderTopLeftRadius: '20px'}}
+                  src={item.image}
+                  style={{
+                    borderTopRightRadius: '20px',
+                    borderTopLeftRadius: '20px',
+                  }}
                 />
-                <Card.Body style={{borderRadius: '20px'}}>
+                <Card.Body style={{ borderRadius: '20px' }}>
                   <Card.Title>{item.id}</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
+                  <Card.Text>{item.title}</Card.Text>
                   <Button
                     variant="btn btn-outline-dark btn-sm "
-                    onClick={() => console.log('加到購物車')}
+                    onClick={() => {
+                      addItem.push(item);
+                      dispatch({ type: ADD_TO_CART, item: addItem });
+                    }}
                   >
                     加到購物車
                   </Button>
