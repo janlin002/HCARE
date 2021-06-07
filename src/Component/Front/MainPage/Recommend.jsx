@@ -3,10 +3,10 @@ import React, {useContext} from 'react';
 //Component
 import ProductCarousel from './ProductCarousel';
 import { CHANGE_PRODUCT } from '../../../Redux/Action/actionType';
-import { changeProductType } from '../../../Redux/Reducer';
+import { contextApi } from '../../../Redux/Reducer';
 
 function Recommend() {
-    const {dispatch} = useContext(changeProductType);
+    const { productDispatch }= useContext(contextApi);
   return (
     <div>
       <div className="container productRecommend">
@@ -24,7 +24,7 @@ function Recommend() {
                   role="tab"
                   aria-controls="home"
                   aria-selected="true"
-                  onClick={()=>dispatch({type:CHANGE_PRODUCT, products: 'home'})}
+                  onClick={()=>productDispatch({type:CHANGE_PRODUCT, products: 'home'})}
                 >
                   沙發/椅子/桌子
                 </button>
@@ -39,7 +39,7 @@ function Recommend() {
                   role="tab"
                   aria-controls="profile"
                   aria-selected="false"
-                  onClick={()=>dispatch({type:CHANGE_PRODUCT, products: 'profile'})}
+                  onClick={()=>productDispatch({type:CHANGE_PRODUCT, products: 'profile'})}
                 >
                   盆栽/植物
                 </button>
@@ -54,7 +54,7 @@ function Recommend() {
                   role="tab"
                   aria-controls="contact"
                   aria-selected="false"
-                  onClick={()=>dispatch({type:CHANGE_PRODUCT, products: 'content'})}
+                  onClick={()=>productDispatch({type:CHANGE_PRODUCT, products: 'content'})}
                 >
                   廚房用品
                 </button>

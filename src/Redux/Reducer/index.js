@@ -18,7 +18,6 @@ export const reducer = (state = initialState, action) => {
       return action.itemId;
     case ADD_TO_CART: {
       const { cartItem } = state;
-      console.log('reducer')
       return {
         cartItem: [...cartItem],
       };
@@ -34,46 +33,26 @@ export const reducer = (state = initialState, action) => {
   }
 };
 
-export const changeProductType = React.createContext({});
-
-export const ProductType = (props) => {
-  const [products, dispatch] = useReducer(reducer, 'home');
+export const contextApi = React.createContext({});
+export const ContextApi = (props) =>{
+  const [products, productDispatch] = useReducer(reducer, 'home');
+  const [itemId, itemIdDispatch] = useReducer(reducer, '0');
+  const [item, itemDispatch] = useReducer(reducer, initialState);
+  const [removeId, removeIdDispatch] = useReducer(reducer, initialState);
+  const value= {
+    products,
+    productDispatch,
+    itemId,
+    itemIdDispatch,
+    item,
+    itemDispatch,
+    removeId,
+    removeIdDispatch
+  }
   return (
-    <changeProductType.Provider value={{ products, dispatch }}>
+    <contextApi.Provider value={value}>
       {props.children}
-    </changeProductType.Provider>
-  );
-};
+    </contextApi.Provider>
+  )
+}
 
-export const sendItemIndexKey = React.createContext({});
-
-export const SendItemIndex = (props) => {
-  const [itemId, dispatch] = useReducer(reducer, '0');
-  return (
-    <sendItemIndexKey.Provider value={{ itemId, dispatch }}>
-      {props.children}
-    </sendItemIndexKey.Provider>
-  );
-};
-
-export const addItemToCart = React.createContext({});
-
-export const AddToCart = (props) => {
-  const [item, dispatch] = useReducer(reducer, initialState);
-  return (
-    <addItemToCart.Provider value={{ item, dispatch }}>
-      {props.children}
-    </addItemToCart.Provider>
-  );
-};
-
-export const removeItemFromCart = React.createContext({});
-
-export const RemoveItem = (props) => {
-  const [removeId, dispatch] = useReducer(reducer, initialState);
-  return (
-    <removeItemFromCart.Provider value={{ removeId, dispatch }}>
-      {props.children}
-    </removeItemFromCart.Provider>
-  );
-};

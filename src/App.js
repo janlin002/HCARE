@@ -7,21 +7,15 @@ import Navbar from './Component/Navbar';
 import Footer from './Component/Footer';
 import Carousels from './Component/Carousels';
 import MainPage from './Component/Front/MainPage/MainPage';
-import {ProductType} from './Redux/Reducer';
-import { SendItemIndex } from './Redux/Reducer'
-import { AddToCart } from './Redux/Reducer';
-import {RemoveItem} from './Redux/Reducer';
 import Product from './Component/Front/Products/ProductLayout';
 import BrandLayout from './Component/Front/Brand/BrandLayout';
-import MoreInfo from './Component/Front/Products/MoreInfo'
+import MoreInfo from './Component/Front/Products/MoreInfo';
+import { ContextApi } from './Redux/Reducer/index';
 
 function App() {
   return (
     <div>
-      <RemoveItem>
-      <AddToCart>
-      <SendItemIndex>
-      <ProductType>
+      <ContextApi>
         <Router>
           <Navbar />
           <Carousels />
@@ -33,10 +27,7 @@ function App() {
           </Switch>
           <Footer />
         </Router>
-      </ProductType>
-      </SendItemIndex>
-      </AddToCart>
-      </RemoveItem>
+      </ContextApi>
     </div>
   );
 }

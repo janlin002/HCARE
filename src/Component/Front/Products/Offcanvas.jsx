@@ -1,15 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
-import { sendItemIndexKey } from '../../../Redux/Reducer';
 import { Button } from 'react-bootstrap';
-import { addItemToCart } from '../../../Redux/Reducer';
 import { ADD_TO_CART } from '../../../Redux/Action/actionType';
 import _ from 'lodash';
-import MoreInfo from './MoreInfo';
+import { contextApi } from '../../../Redux/Reducer';
 
 function Offcanvas() {
-  const { itemId } = useContext(sendItemIndexKey);
-  const { item, dispatch } = useContext(addItemToCart);
+  const { itemId } = useContext(contextApi);
+  const { item, itemDispatch }= useContext(contextApi);
   const addItem = item.cartItem;
   return (
     <div>
@@ -29,7 +26,7 @@ function Offcanvas() {
           onClick={() => {
             const addItemId = addItem.push(itemId);
             console.log(addItem, 'additem');
-            dispatch({ type: ADD_TO_CART, item: addItem });
+            itemDispatch({ type: ADD_TO_CART, item: addItem });
           }}
         >
           <i className="fas fa-cart-plus"></i>加入購物車

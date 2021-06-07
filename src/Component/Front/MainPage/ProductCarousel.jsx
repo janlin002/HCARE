@@ -1,14 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Card, Button, Modal } from 'react-bootstrap';
 
-import { changeProductType } from '../../../Redux/Reducer';
+import { contextApi } from '../../../Redux/Reducer';
 import { home, profile, content } from '../../../data';
-import { addItemToCart } from '../../../Redux/Reducer';
 import { ADD_TO_CART } from '../../../Redux/Action/actionType';
 
 function ProductCarousel() {
-  const { products } = useContext(changeProductType);
-  const { item, dispatch } = useContext(addItemToCart);
+  const { products } = useContext(contextApi);
+  const { item, itemDispatch } = useContext(contextApi);
   const addItem = item.cartItem;
   console.log(item.cartItem, 'reducer');
   if (products === 'home') {
@@ -33,7 +32,7 @@ function ProductCarousel() {
                     variant="btn btn-outline-dark btn-sm"
                     onClick={() => {
                       addItem.push(item);
-                      dispatch({ type: ADD_TO_CART, item: addItem });
+                      itemDispatch({ type: ADD_TO_CART, item: addItem });
                     }}
                   >
                     加到購物車
@@ -67,7 +66,7 @@ function ProductCarousel() {
                     variant="btn btn-outline-dark btn-sm"
                     onClick={() => {
                       addItem.push(item);
-                      dispatch({ type: ADD_TO_CART, item: addItem });
+                      itemDispatch({ type: ADD_TO_CART, item: addItem });
                     }}
                   >
                     加到購物車
@@ -101,7 +100,7 @@ function ProductCarousel() {
                     variant="btn btn-outline-dark btn-sm "
                     onClick={() => {
                       addItem.push(item);
-                      dispatch({ type: ADD_TO_CART, item: addItem });
+                      itemDispatch({ type: ADD_TO_CART, item: addItem });
                     }}
                   >
                     加到購物車

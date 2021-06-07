@@ -1,16 +1,14 @@
 import React, { useContext } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { addItemToCart } from '../Redux/Reducer';
-import { removeItemFromCart } from '../Redux/Reducer';
 import { REMOVE_ITEM } from '../Redux/Action/actionType';
+import { contextApi } from '../Redux/Reducer';
 
 function NavBar() {
-  const { item } = useContext(addItemToCart);
-  const { removeId, dispatch } = useContext(removeItemFromCart);
+  const { item } = useContext(contextApi);
+  const { removeId, removeIdDispatch} = useContext(contextApi);
   const removeItemId = item.cartItem;
   const removeIdChange  = removeId;
-  console.log(removeItemId, 'removeItemId')
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -68,7 +66,7 @@ function NavBar() {
                               variant="btn btn-outline-danger btn-sm"
                               onClick={() => {
                                 const removeItem = removeItemId.splice(key, 1);
-                                dispatch({
+                                removeIdDispatch({
                                   type: REMOVE_ITEM, removeIdChange: removeItemId
                                 });
                               }}

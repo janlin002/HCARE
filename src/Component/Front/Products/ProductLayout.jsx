@@ -3,14 +3,14 @@ import { Button, Card, Dropdown } from 'react-bootstrap';
 //Component
 import type from '../../../data/type';
 import Offcanvas from './Offcanvas';
-import { sendItemIndexKey } from '../../../Redux/Reducer';
 import { SEND_ITEM_INDEX } from '../../../Redux/Action/actionType';
 import AddToCartButton from './AddToCartButton';
+import { contextApi } from '../../../Redux/Reducer';
 
 function Product() {
   const [types, setType] = useState(type[0]);
   const products = types.product;
-  const { dispatch } = useContext(sendItemIndexKey);
+  const { itemIdDispatch } = useContext(contextApi);
   return (
     <div>
       <div className="container">
@@ -71,7 +71,7 @@ function Product() {
                     data-bs-target="#offcanvasRight"
                     aria-controls="offcanvasRight"
                     onClick={() =>
-                      dispatch({
+                      itemIdDispatch({
                         type: SEND_ITEM_INDEX,
                         itemId: types.product[key],
                       })
