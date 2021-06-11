@@ -25,7 +25,6 @@ function Offcanvas() {
           data-bs-dismiss="offcanvas"
           onClick={() => {
             const addItemId = addItem.push(itemId);
-            console.log(addItem, 'additem');
             itemDispatch({ type: ADD_TO_CART, item: addItem });
           }}
         >

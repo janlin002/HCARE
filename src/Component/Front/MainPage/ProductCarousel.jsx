@@ -9,7 +9,6 @@ function ProductCarousel() {
   const { products } = useContext(contextApi);
   const { item, itemDispatch } = useContext(contextApi);
   const addItem = item.cartItem;
-  console.log(item.cartItem, 'reducer');
   if (products === 'home') {
     return (
       <div className="container">

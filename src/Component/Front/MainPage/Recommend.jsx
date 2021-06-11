@@ -10,7 +10,7 @@ function Recommend() {
   return (
     <div>
       <div className="container productRecommend">
-        <h3 className="text-center p-5">精選好物推薦</h3>
+        <h3 className="text-center pb-5">精選好物推薦</h3>
         <div className="row">
           <div className="productRecommend">
             <ul className="nav nav-tabs nav-fill" id="myTab" role="tablist">

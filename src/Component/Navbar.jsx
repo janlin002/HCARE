@@ -1,14 +1,10 @@
 import React, { useContext } from 'react';
-import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { REMOVE_ITEM } from '../Redux/Action/actionType';
 import { contextApi } from '../Redux/Reducer';
 
 function NavBar() {
   const { item } = useContext(contextApi);
-  const { removeId, removeIdDispatch} = useContext(contextApi);
-  const removeItemId = item.cartItem;
-  const removeIdChange  = removeId;
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -29,22 +25,29 @@ function NavBar() {
               </Link>
             </Nav>
             <div className="smFade d-flex">
-              <i className="fas fa-user fa-2x"></i>
-              <div className="dropdown">
-                <button
+              {/* <div className="dropdown dropdown-menu-start dropStart"> */}
+                {/* <button
                   className=" dropdown-toggle"
                   type="button"
                   id="dropdownMenuButton1"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                   style={{ border: '0px', backgroundColor: 'rgba(0,0,0,0)' }}
-                >
-                  <i className="fas fa-shopping-cart shopCartIcon fa-2x" />
-                  <span className="numberIcon">{item.cartItem.length}</span>
-                </button>
-                <ul
-                  className="dropdown-menu dropstart"
-                  aria-labelledby="dropdownMenuButton1"
+                > */}
+                <Link to="/checkout">
+                  <button
+                    style={{ border: '0px', backgroundColor: 'rgb(0,0,0,0)' }}
+                  >
+                    <i className="fas fa-shopping-cart shopCartIcon fa-2x" />
+                    <span className="numberIcon">{item.cartItem.length}</span>
+                  </button>
+                </Link>
+
+                {/* <ul
+                  className="dropdown-menu"
+                  // aria-labelledby="dropdownMenuButton1"
+                  data-offset="400"
+                  aria-expanded="false"
                   style={{ minWidth: '300px' }}
                 >
                   <h6 className="text-center">已選擇商品</h6>
@@ -84,7 +87,8 @@ function NavBar() {
                     </tbody>
                   </table>
                 </ul>
-              </div>
+              </div> */}
+              {/* </div> */}
             </div>
             <div className="smShow pb-2 pt-2">
               <Link className="NavLink" to="/brand">
