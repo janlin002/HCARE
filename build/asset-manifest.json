@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/HCARE/static/css/main.c54fa9a3.chunk.css",
+    "main.js": "/HCARE/static/js/main.06642e1a.chunk.js",
+    "main.js.map": "/HCARE/static/js/main.06642e1a.chunk.js.map",
+    "runtime-main.js": "/HCARE/static/js/runtime-main.18f81fb7.js",
+    "runtime-main.js.map": "/HCARE/static/js/runtime-main.18f81fb7.js.map",
+    "static/css/2.4f8976c6.chunk.css": "/HCARE/static/css/2.4f8976c6.chunk.css",
+    "static/js/2.28895312.chunk.js": "/HCARE/static/js/2.28895312.chunk.js",
+    "static/js/2.28895312.chunk.js.map": "/HCARE/static/js/2.28895312.chunk.js.map",
+    "index.html": "/HCARE/index.html",
+    "static/css/2.4f8976c6.chunk.css.map": "/HCARE/static/css/2.4f8976c6.chunk.css.map",
+    "static/css/main.c54fa9a3.chunk.css.map": "/HCARE/static/css/main.c54fa9a3.chunk.css.map",
+    "static/js/2.28895312.chunk.js.LICENSE.txt": "/HCARE/static/js/2.28895312.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.18f81fb7.js",
+    "static/css/2.4f8976c6.chunk.css",
+    "static/js/2.28895312.chunk.js",
+    "static/css/main.c54fa9a3.chunk.css",
+    "static/js/main.06642e1a.chunk.js"
+  ]
+}
